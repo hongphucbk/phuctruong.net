@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- AWP_In_Variable Name='"WinCC_Start"' -->
+<!-- AWP_In_Variable Name='"WinCC_Stop"' -->
+<!-- AWP_In_Variable Name='"Run"' -->
+<!-- AWP_In_Variable Name='"Finish"' -->
+<!-- AWP_In_Variable Name='"PV1"' -->
+<!-- AWP_In_Variable Name='"PV2"' -->
+<!-- AWP_In_Variable Name='"SP1"' -->
+<!-- AWP_In_Variable Name='"SP2"' -->
+<!-- AWP_In_Variable Name='"Kp1"' -->
+<!-- AWP_In_Variable Name='"Ti1"' -->
+<!-- AWP_In_Variable Name='"Td1"' -->
+<!-- AWP_In_Variable Name='"Kp2"' -->
+<!-- AWP_In_Variable Name='"Ti2"' -->
+<!-- AWP_In_Variable Name='"Td2"' -->
+<!-- AWP_In_Variable Name='"Lamp_Emergency"' -->
+
+
+<html lang="vi">
+<head>
+	<title>LUAN VAN 2016</title>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="icon.png">
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="smoothie.js"></script>
+	<script type="text/javascript" src="myjavascript.js"></script>
+
+	<script type="text/javascript">
+		//Web = 1: info
+		//Web = 2: Trend
+		//Web = 3: Report
+		web_current = 2;
+	</script>
+</head>
+
+<body onload="load_xong()">
+	<div id="main">
+	    <div id="head">
+	    	<div id="head_logo">
+	    		
+				<img src="logobk.png" style="margin-left: 5px; margin-top: 10px;" />
+			</div>
+
+			<div id="head_text" >
+				<h3 style="text-align:center; color:blue;">TRƯỜNG ĐẠI HỌC BÁCH KHOA </h3>
+				<h2 style="text-align:center; color:blue;">LUẬN VĂN TỐT NGHIỆP </h2>
+				<h1 style="text-align:center; color:red;">SCADA HỆ BỒN NƯỚC ĐÔI QUA WEBSERVER</h1>
+				<h3 style="text-align:center; color:green;">GVHD: BÙI THANH HUYỀN    -   SVTH: TRƯƠNG HỒNG PHÚC 41202820</h3>
+				
+			</div>
+
+	    </div>
+	    
+	    <div id="head-link">
+	    	  <ul>
+			    <li><a href="index.html">HOME</a></li>
+			    <li><a href="control.html" >CONTROL</a></li>
+			    <li><a href="#" style="color:yellow">TREND</a></li>
+			    <li><a href="report.html">REPORT</a></li>
+			    <li><a href="info.html">INFO</a></li>
+			    <li><a href="help.html">HELP</a></li>
+			  </ul>
+
+	    </div>
+	    
+	    <div id="trend_content">
+	    	<div id="control-content-table-1-1">
+	    		<div id="control-table">
+					<canvas id="mycanvas1" width="315" height="200"></canvas>    
+				</div>
+			</div>
+			<div id="control-content-table-1-2">
+	    		<div id="control-table">
+					<canvas id="mycanvas2" width="315" height="200"></canvas>    
+				</div>
+			</div>
+
+			<div id="control-content-table-1-1">
+		    	<div id="control-table">
+					
+					  <label for="fname">Set Point 1 </label>
+					  <div id="SP1" style="font-family:verdana;color:blue;font-size:200%;text-align:center;"></div>
+
+					
+					<p>Process Variable 1 (PV1)</p>
+					<div id="PV1" style="font-family:verdana;color:red;font-size:200%;text-align:center;"></div>
+					
+				</div>			 
+			</div>
+
+			<div id="control-content-table-1-2">
+		    	<div id="control-table">
+					
+					  <label for="fname">Set Point 2 </label>
+					  <div id="SP2" style="font-family:verdana;color:blue;font-size:200%;text-align:center;"></div>
+					<p>Process Variable 2 (PV2)</p>
+					<div id="PV2" style="font-family:verdana;color:red;font-size:200%;text-align:center;"></div>
+				</div>			 
+			</div>
+			<div id="info-content-table">
+				<hr>
+			</div>
+
+
+
+			<marquee> LUẬN VĂN TỐT NGHIỆP 2016 - TRƯƠNG HỒNG PHÚC- 41202820</marquee>
+
+	    </div>
+	    <div id="trend_right">
+	    	<H3>Hôm nay:<p id="time" style="text-align:center" ></p></H3>
+	    	<hr>
+	    	<div id="Lamp_Display"></div>
+			<hr>
+	    	<h4>Hướng dẫn</h4>
+	    	<p>Bước 1: Bắt đầu/kết thúc điều khiển bằng cách nhấn nút START/STOP</p>
+	    	<p>Bước 2: Để thay đổi giá trị thông số Kp, Ki, Kd vui lòng quay lại trang "Control"</p>
+	    	<p>Bước 3: Đặt giá trị mức nước mong muốn ở ô "Set Point"</p>
+	    	<p>Bước 4: Bấm nút Set Value để đặt gửi giá trị về Server. Nếu muốn thay đổi mức nước quay lại bước 3, Nếu muốn thay đổi thông số Kp, Ki, Kd vui lòng quay lại Bước 2</p>
+	    </div>
+	    
+	    <div id="footer">
+	    
+			<table>
+			  <tr>
+			    <td> TRƯƠNG HỒNG PHÚC </td>
+			  </tr>
+			  <tr>
+			    <td>Số điện thoại: 0968-460-480</td>
+			  </tr>
+			  <tr>
+			  	<td>Email: phuchong94@gmail.com</td>
+			  </tr>
+			</table>
+	    </div>
+
+    </div>
+
+
+</body>

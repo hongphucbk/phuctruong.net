@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- AWP_In_Variable Name='"WinCC_Start"' -->
+<!-- AWP_In_Variable Name='"WinCC_Stop"' -->
+<!-- AWP_In_Variable Name='"Run"' -->
+<!-- AWP_In_Variable Name='"Finish"' -->
+<!-- AWP_In_Variable Name='"PV1"' -->
+<!-- AWP_In_Variable Name='"PV2"' -->
+<!-- AWP_In_Variable Name='"SP1"' -->
+<!-- AWP_In_Variable Name='"SP2"' -->
+<!-- AWP_In_Variable Name='"Kp1"' -->
+<!-- AWP_In_Variable Name='"Ti1"' -->
+<!-- AWP_In_Variable Name='"Td1"' -->
+<!-- AWP_In_Variable Name='"Kp2"' -->
+<!-- AWP_In_Variable Name='"Ti2"' -->
+<!-- AWP_In_Variable Name='"Td2"' -->
+<!-- AWP_In_Variable Name='"Lamp_Emergency"' -->
+
+<html lang="vi">
+<head>
+	<title>LUAN VAN 2016</title>
+	<meta charset="UTF-8">
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="myjavascript.js"></script>
+
+	<script type="text/javascript">
+		//Web = 1: info
+		//Web = 2: Trend
+		web_current = 4;
+
+	</script>
+		
+	
+</head>
+
+<body onload="load_xong()">
+	<div id="main">
+	    <div id="head">
+	    	<div id="head_logo">
+	    		
+				<img src="logobk.png" style="margin-left: 5px; margin-top: 10px;" />
+			</div>
+
+			<div id="head_text" >
+				<h3 style="text-align:center; color:blue;">TRƯỜNG ĐẠI HỌC BÁCH KHOA </h3>
+				<h2 style="text-align:center; color:blue;">LUẬN VĂN TỐT NGHIỆP </h2>
+				<h1 style="text-align:center; color:red;">SCADA HỆ BỒN NƯỚC ĐÔI QUA WEBSERVER</h1>
+				<h3 style="text-align:center; color:green;">GVHD: BÙI THANH HUYỀN    -   SVTH: TRƯƠNG HỒNG PHÚC 41202820</h3>
+				
+			</div>
+
+	    </div>
+	    
+	    <div id="head-link">
+	    	  <ul>
+			    <li><a href="index.html">HOME</a></li>
+			    <li><a href="control.html">CONTROL</a></li>
+			    <li><a href="trend.html">TREND</a></li>
+			    <li><a href="report.html">REPORT</a></li>
+			    <li><a href="info.html">INFO</a></li>
+			    <li><a href="help.html">HELP</a></li>
+			  </ul>
+
+	    </div>
+	    
+	    <div id="content">
+	    	<div id="info-content-table">
+		    	<div id="control-table" style="text-align: center;">
+		    	<H2 style="font-family:verdana;color:blue;font-size:200%;text-align:center;"> THÔNG TIN CÁC BIẾN</H2>
+				</div>			 
+			</div>
+			<div id="info-content-table">
+		    	<div id="control-table" style="text-align: left;">
+		    		<li style="color:green;">WinCC Start  <span  id="WinCC_Start" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+					<li style="color:green;">WinCC Stop  <span  id="WinCC_Stop" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+					<li style="color:green;">Run  <span  id="Run" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+					<li style="color:green;">Finish <span  id="Finish" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+				</div>			 
+			</div>
+		    <div id="control-content-table-1-1">
+		    	<div id="control-table">
+					<ul>
+						<li style="color:green;">Kp1 <span  id="Kp1" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+						<li style="color:green;">Ti1 <span  id="Ti1" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+						<li style="color:green;">Td1 <span  id="Td1" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+						<li style="color:green;">SP1 <span  id="SP1" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+						<li style="color:green;">PV1 <span  id="PV1" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+						
+					</ul>			
+				</div>			 
+			</div>
+
+			<div id="control-content-table-1-2">
+		    	<div id="control-table">
+					<ul>
+						<li style="color:green;">Kp2 <span  id="Kp2" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+						<li style="color:green;">Ti2 <span  id="Ti2" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+						<li style="color:green;">Td2 <span  id="Td2" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+						<li style="color:green;">SP2 <span  id="SP2" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+						<li style="color:green;">PV2 <span  id="PV2" style="font-family:verdana;color:blue;font-size:120%;text-align:center;"></span></li>
+					</ul>	
+				</div>			 
+			</div>
+			
+
+			
+
+			<div id="info-content-table">
+			<hr>
+			</div>
+			
+
+			
+
+
+			<marquee> LUẬN VĂN TỐT NGHIỆP 2016 - TRƯƠNG HỒNG PHÚC- 41202820</marquee>
+
+	    </div>
+	    <div id="right">
+	    	<H3>Hôm nay:<p id="time" style="text-align:center" ></p></H3>
+	    	<hr>
+	  		<div id="Lamp_Display"></div>
+			<hr>
+	    	
+	    	<h4>Hướng dẫn</h4>
+	    	<p>Bước 1: Bắt đầu/kết thúc điều khiển bằng cách nhấn nút START/STOP</p>
+	    	<p>Bước 2: Điền các thông số Kp, Ki, Kd (thường các giá trị này đã có sẵn)</p>
+	    	<p>Bước 3: Đặt giá trị mức nước mong muốn ở ô "Set Point"</p>
+	    	<p>Bước 4: Bấm nút Set Value để đặt gửi giá trị về Server</p>
+
+	    </div>
+	    
+	    <div id="footer">
+	    
+			<table>
+			  <tr>
+			    <td> TRƯƠNG HỒNG PHÚC </td>
+			  </tr>
+			  <tr>
+			    <td>Số điện thoại: 0968-460-480</td>
+			  </tr>
+			  <tr>
+			  	<td>Email: phuchong94@gmail.com</td>
+			  </tr>
+			</table>
+	    </div>
+
+    </div>
+
+
+</body>

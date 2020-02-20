@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!-- AWP_In_Variable Name='"WinCC_Start"' -->
+<!-- AWP_In_Variable Name='"WinCC_Stop"' -->
+<!-- AWP_In_Variable Name='"Run"' -->
+<!-- AWP_In_Variable Name='"Finish"' -->
+<!-- AWP_In_Variable Name='"PV1"' -->
+<!-- AWP_In_Variable Name='"PV2"' -->
+<!-- AWP_In_Variable Name='"SP1"' -->
+<!-- AWP_In_Variable Name='"SP2"' -->
+<!-- AWP_In_Variable Name='"Kp1"' -->
+<!-- AWP_In_Variable Name='"Ti1"' -->
+<!-- AWP_In_Variable Name='"Td1"' -->
+<!-- AWP_In_Variable Name='"Kp2"' -->
+<!-- AWP_In_Variable Name='"Ti2"' -->
+<!-- AWP_In_Variable Name='"Td2"' -->
+<!-- AWP_In_Variable Name='"Lamp_Emergency"' -->
+
+<html lang="vi">
+<head>
+	<title>LUAN VAN 2016</title>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="icon.png">
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript">
+		var bitStart = "0";
+		var bitStop = "0";
+		var Run;
+		var Emergency_Temp; //Emergency da duoc kich hoat
+		var lamp_color; //Mau den bao Start, Stop, Emergency
+		//---------------------------------------------------------------
+		//Bat dau phan Stop
+		function guiStart(){
+			var xmlhttp;
+			if (window.XMLHttpRequest) {
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				xmlhttp = new ActiveX0bject("Microsoft.XMLHTTP");
+			}
+			//text = document.getElementById("text").value;
+			//document.getElementById("sent").innerHTML=text;
+			xmlhttp.open("POST","dulieu.html",true);
+			// xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xmlhttp.send("\"WinCC_Start\"="+ bitStart);	
+		}
+		//Nha chuot trai ra Reset toan bo bien Start, Stop
+		function mouseDown_Start() {
+		    bitStart = "1";
+		    guiStart();
+		}
+		function mouseUp_Start() {
+		    bitStart = "0";
+		    guiStart();
+		}
+		//Ket thuc phan Start
+		//---------------------------------------------------------------
+		//Bat dau phan Stop
+		function guiStop(){
+			var xmlhttp;
+			if (window.XMLHttpRequest) {
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				xmlhttp = new ActiveX0bject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.open("POST","dulieu.html",true);
+			xmlhttp.send("\"WinCC_Stop\"="+bitStop);		
+		}
+
+		function mouseDown_Stop() {
+		    bitStop = "1";
+		    guiStop();
+		}
+		function mouseUp_Stop() {
+		    bitStop = "0";
+		    guiStop();
+		}
+		//Ket thuc phan gui Stop
+		//---------------------------------------------------------------
+		//Gui value
+		function SetValue(){
+			var xmlhttp;
+			if (window.XMLHttpRequest) {
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				xmlhttp = new ActiveX0bject("Microsoft.XMLHTTP");
+			}
+			txtSP1 = document.getElementById("txtSP1").value;
+			txtSP2 = document.getElementById("txtSP2").value;	
+			SP1_Sent = parseFloat(txtSP1);
+			SP2_Sent = parseFloat(txtSP2);
+	
+			xmlhttp.open("POST","dulieu.html",true);
+			xmlhttp.send("\"SP1\"="+"12"+"&"+"\"SP2\"="+"34");		
+		}
+
+		function gettime() {
+			setInterval(function() {
+				d = new Date();
+			    n = d.toLocaleString();
+				document.getElementById("time").innerHTML = n;
+				thoigian = n;
+				
+			}, 1000);
+		}
+		function Lamp() {
+				if (Run == "1") {
+					lamp_color = "green";
+				} else {
+					if (Emergency_Temp == "1") {
+						if (emergency == "1") {
+							lamp_color = "yellow";
+						} else {
+							lamp_color = "white";
+						}
+					} else {
+						lamp_color = "red";
+					}	
+				}
+				document.getElementById("Lamp_Display").style.background = lamp_color;
+			}
+
+	//-------------------------------------------------
+		function loadRun(){
+		var xmlhttp;
+		if (window.XMLHttpRequest) {
+			xmlhttp = new XMLHttpRequest();
+		} else {
+			xmlhttp = new ActiveX0bject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange = function () {
+			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+				var arr = xmlhttp.responseText.toString().match(/[^\r\n]+/g);
+				Run = arr[2];
+				Emergency_Temp = arr[15];
+				Lamp();
+			}
+		}
+		xmlhttp.open("GET","dulieu.html",true);
+		xmlhttp.send();
+		setTimeout('loadRun()',2000);
+		}
+
+
+	//-----------------------------------------------
+		function loaded_control(argument) {
+			gettime();
+			loadRun();
+		}
+	//-----------------------------------------------
+		function Control_SetValue(){
+			var xmlhttp;
+			if (window.XMLHttpRequest) {
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				xmlhttp = new ActiveX0bject("Microsoft.XMLHTTP");
+			}
+			txtSP1 = document.getElementById("txtSP1").value;
+			txtSP2 = document.getElementById("txtSP2").value;
+			txtKp1 = document.getElementById("txtKp1").value;
+			txtTi1 = document.getElementById("txtTi1").value;
+			txtTd1 = document.getElementById("txtTd1").value;
+			txtKp2 = document.getElementById("txtKp2").value;
+			txtTi2 = document.getElementById("txtTi2").value;
+			txtTd2 = document.getElementById("txtTd2").value;
+			//Nhan len 100 de lay so nguyen
+			SP1_Sent = parseFloat(txtSP1);
+			SP2_Sent = parseFloat(txtSP2);
+			Kp1_Sent = parseFloat(txtKp1);
+			Kp2_Sent = parseFloat(txtKp2);
+			Ti1_Sent = parseFloat(txtTi1);
+			Ti2_Sent = parseFloat(txtTi2);
+			Td1_Sent = parseFloat(txtTd1);
+			Td2_Sent = parseFloat(txtTd2);
+			txtSent = "\"SP1\"="+SP1_Sent+"&"+"\"SP2\"="+SP2_Sent+"&"+"\"Kp1\"="+Kp1_Sent+"&"+"\"Kp2\"="+Kp2_Sent+"&"+"\"Ti1\"="+Ti1_Sent+"&"+"\"Ti2\"="+Ti2_Sent+"&"+"\"Td1\"="+Td1_Sent+"&"+"\"Td2\"="+Td2_Sent;
+
+			xmlhttp.open("POST","dulieu.html",true);
+			// xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			//xmlhttp.send("\"SP1\"="+txtSP1);
+			xmlhttp.send(txtSent);		
+		}
+
+
+	//-----------------------------------------------
+	</script>
+		
+	
+</head>
+
+<body onload="loaded_control()">
+	<div id="main">
+	    <div id="head">
+	    	<div id="head_logo">
+	    		
+				<img src="logobk.png" style="margin-left: 5px; margin-top: 10px;" />
+			</div>
+
+			<div id="head_text" >
+				<h3 style="text-align:center; color:blue;">TRƯỜNG ĐẠI HỌC BÁCH KHOA </h3>
+				<h2 style="text-align:center; color:blue;">LUẬN VĂN TỐT NGHIỆP </h2>
+				<h1 style="text-align:center; color:red;">SCADA HỆ BỒN NƯỚC ĐÔI QUA WEBSERVER</h1>
+				<h3 style="text-align:center; color:green;">GVHD: BÙI THANH HUYỀN    -   SVTH: TRƯƠNG HỒNG PHÚC 41202820</h3>
+				
+			</div>
+
+	    </div>
+	    
+	    <div id="head-link">
+	    	  <ul>
+			    <li><a href="index.html">HOME</a></li>
+			    <li><a href="#" style="color:yellow">CONTROL</a></li>
+			    <li><a href="trend.html">TREND</a></li>
+			    <li><a href="report.html">REPORT</a></li>
+			    <li><a href="info.html">INFO</a></li>
+			    <li><a href="help.html">HELP</a></li>
+			  </ul>
+
+	    </div>
+	    
+	    <div id="content">
+		    <div id="control-content-table-1-1">
+		    	<div id="control-table">
+					<form>
+					  <label for="fname" style="color:green">Kp1 </label>
+					  <input type="text" id="txtKp1" name="fname" placeholder="Kp...">
+
+					  <label for="lname" style="color:green">Ti1 </label>
+					  <input type="text" id="txtTi1" name="lname" placeholder="Ti...">
+
+					  <label for="lname" style="color:green">Td1 </label>
+					  <input type="text" id="txtTd1" name="lname" placeholder="Td...">
+
+					</form>
+				</div>			 
+			</div>
+
+			<div id="control-content-table-1-2">
+		    	<div id="control-table">
+					<form>
+					  <label for="fname" style="color:green">Kp2 <span style="color:green"></label>
+					  <input type="text" id="txtKp2" name="fname" placeholder="Kp...">
+
+					  <label for="lname" style="color:green">Ti2 <span style="color:green"></label>
+					  <input type="text" id="txtTi2" name="lname" placeholder="Ti...">
+
+					  <label for="lname" style="color:green">Td2 <span style="color:green"></label>
+					  <input type="text" id="txtTd2" name="lname" placeholder="Td...">
+					</form>
+				</div>			 
+			</div>
+			<div id="control-content-table-1-1">
+		    	<div id="control-table">
+					<form>
+					  <label for="fname" style="color:green">Set Point 1 <span style="color:green"></label>
+					  <input type="text" id="txtSP1" name="fname" placeholder="Set Point 1...">
+					</form>				
+				</div>			 
+			</div>
+
+			<div id="control-content-table-1-2">
+		    	<div id="control-table">
+					<form>
+					  <label for="fname" style="color:green">Set Point 2</label>
+					  <input type="text" id="txtSP2" name="fname" placeholder="Set Point 2...">
+					</form>
+				</div>			 
+			</div>
+			<div style="text-align: center;">
+				<button class="button" style="width: 96%; background-color:rgba(0,0,255,0.4)" onmousedown="Control_SetValue()"><span>Set Value </span></button>
+			</div>
+			<div id="control-content-table-1-1">
+		    	<div id="control-table" style="text-align: center;">
+					<button class="button" style="width: 90%; background-color:green" onmousedown="mouseDown_Start()" onmouseup="mouseUp_Start()" ><span> Start </span></button>
+				</div>			 
+			</div>
+
+			<div id="control-content-table-1-2">
+		    	<div id="control-table"  style="text-align: center;">
+					<button class="button" style="width: 90%;background-color:red" onmousedown="mouseDown_Stop()" onmouseup="mouseUp_Stop()"><span> Stop </span></button>
+				</div>			 
+			</div>
+			<div id="info-content-table">
+				<hr>
+			</div>
+			<marquee> LUẬN VĂN TỐT NGHIỆP 2016 - TRƯƠNG HỒNG PHÚC- 41202820</marquee>
+
+	    </div>
+	    <div id="right">
+	    	<H3>Hôm nay:<p id="time" style="text-align:center" ></p></H3>
+	    	<hr>
+	  		<div id="Lamp_Display"></div>
+			<hr>
+	    	
+	    	<h4>Hướng dẫn</h4>
+	    	<p>Bước 1: Bắt đầu/kết thúc điều khiển bằng cách nhấn nút START/STOP</p>
+	    	<p>Bước 2: Điền các thông số Kp, Ki, Kd (thường các giá trị này đã có sẵn)</p>
+	    	<p>Bước 3: Đặt giá trị mức nước mong muốn ở ô "Set Point"</p>
+	    	<p>Bước 4: Bấm nút Set Value để đặt gửi giá trị về Server</p>
+
+	    </div>
+	    
+	    <div id="footer">
+	    
+			<table>
+			  <tr>
+			    <td> TRƯƠNG HỒNG PHÚC </td>
+			  </tr>
+			  <tr>
+			    <td>Số điện thoại: 0968-460-480</td>
+			  </tr>
+			  <tr>
+			  	<td>Email: phuchong94@gmail.com</td>
+			  </tr>
+			</table>
+	    </div>
+
+    </div>
+
+
+</body>
