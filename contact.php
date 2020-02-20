@@ -41,7 +41,7 @@
 
 	    
 	    
-	    
+
 	    
 	    <div id="help-home">
 		    	<h2 style="text-align:center; color:blue;">LIÊN HỆ - CONTACT </h2>
@@ -54,15 +54,15 @@
 				<table>
 					  <tr>
 					    <td>Địa chỉ</td>
-					    <td>Phòng 419-KTX Bách Khoa</td>
+					    <td>Đường 38</td>
 					  </tr>
 					  <tr>
 					    <td></td>
-					    <td>Số 497 Hòa Hảo, Quận 10, Tp.HCM</td>
+					    <td>Hiệp Bình Chánh, Thủ Đức</td>
 					  </tr>
 					  <tr>
 					    <td>Số điện thoại</td>
-					    <td>0968.460.480 - 0938.460.480</td>
+					    <td>0968.460.480 - 094.111.2022</td>
 					  </tr>
 					  <tr>
 					    <td>Thư điện tử</td>
@@ -75,15 +75,15 @@
 				<table>
 					  <tr>
 					    <td id="en">Address</td>
-					    <td id="en">Room 419, Bach Khoa Dormitory</td>
+					    <td id="en">38 Street</td>
 					  </tr>
 					   <tr>
 					    <td id="en"></td>
-					    <td id="en">497 Hoa Hao Str, Dist.10, HCMC</td>
+					    <td id="en">Hiep Binh Chanh, Thu Duc Dist.</td>
 					  </tr>
 					  <tr>
 					    <td id="en">Tel Number</td>
-					    <td id="en">0968.460.480 - 0938.460.480</td>
+					    <td id="en">0968.460.480 - 094.111.2022</td>
 					  </tr>
 					  <tr>
 					    <td id="en">Email</td>
