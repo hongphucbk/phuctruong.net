@@ -21,10 +21,10 @@
 	    <li><a href="introduce.php">INTRODUCE</a></li>
 	    <li><a href="picture.php">PICTURE</a></li>
 	    <li><a href="share.php">SHARE</a></li>
-	    <li><a href="demo.php">DEMO</a></li>
+	    <!-- <li><a href="demo.php">DEMO</a></li> -->
 	    <li><a href="contact.php">CONTACT</a></li>
 		<li><a href="pay.php">PAY</a></li>
-		<li><a href="print.php">PRINT</a></li>
+		<!-- <li><a href="print.php">PRINT</a></li> -->
 	  </ul>
 
   </div>

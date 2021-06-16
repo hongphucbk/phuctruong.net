@@ -39,9 +39,7 @@
 		<?php include("layout/header.php"); ?>
 	    
 
-	    
-	    
-
+	  
 	    
 	    <div id="help-home">
 		    	<h2 style="text-align:center; color:blue;">LIÊN HỆ - CONTACT </h2>
@@ -54,11 +52,11 @@
 				<table>
 					  <tr>
 					    <td>Địa chỉ</td>
-					    <td>Đường 38</td>
+					    <td>449 Trường Chinh</td>
 					  </tr>
 					  <tr>
 					    <td></td>
-					    <td>Hiệp Bình Chánh, Thủ Đức</td>
+					    <td>Phường 14, Tân Bình</td>
 					  </tr>
 					  <tr>
 					    <td>Số điện thoại</td>
@@ -66,7 +64,7 @@
 					  </tr>
 					  <tr>
 					    <td>Thư điện tử</td>
-					    <td>phuchong94@gmail.com</td>
+					    <td>phuctruongdev@gmail.com</td>
 					  </tr>
 				</table>
 			</div>
@@ -75,11 +73,11 @@
 				<table>
 					  <tr>
 					    <td id="en">Address</td>
-					    <td id="en">38 Street</td>
+					    <td id="en">449 Truong Chinh Street</td>
 					  </tr>
 					   <tr>
 					    <td id="en"></td>
-					    <td id="en">Hiep Binh Chanh, Thu Duc Dist.</td>
+					    <td id="en">Ward 14, Tan Binh Dist.</td>
 					  </tr>
 					  <tr>
 					    <td id="en">Tel Number</td>
@@ -87,7 +85,7 @@
 					  </tr>
 					  <tr>
 					    <td id="en">Email</td>
-					    <td id="en">phuchong94@gmail.com</td>
+					    <td id="en">phuctruongdev@gmail.com</td>
 					  </tr>
 				</table>
 				

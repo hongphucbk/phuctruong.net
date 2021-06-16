@@ -4,9 +4,7 @@
 	<title>HONG PHUC</title>
 	<meta charset="UTF-8">
     <link rel="shortcut icon" href="icon.png">
-
 	<link href="style.css" rel="stylesheet" type="text/css" />
-	
 </head>
 
 <body>
@@ -14,8 +12,7 @@
 	    <?php include("layout/header.php"); ?>
 	    
 	    <div id="content-home">
-	    	<br>
-	    	
+	    	<br>   	
 			<marquee style="font-size: 20px; color:blue;"> CHÀO MỪNG CÁC BẠN ĐẾN VỚI WEB - WELCOME TO MY WEB </marquee>
 			<hr>
 			<div style="text-align:center;"> 

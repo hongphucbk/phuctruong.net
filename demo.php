@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-	<title>HONG PHUC</title>
+	<title>PHÚC TRƯƠNG</title>
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" href="icon.png">
 	<link href="style.css" rel="stylesheet" type="text/css" />
