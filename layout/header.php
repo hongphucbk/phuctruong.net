@@ -8,7 +8,7 @@
 		<h2 style="text-align:center; color:red;">CHÀO MỪNG CÁC BẠN ĐẾN VỚI WEB</h2>
 		<h3 style="text-align:center; color:green;">WELCOME TO MY WEB</h3>
 		<h1 style="text-align:center; color:red;">TRƯƠNG HỒNG PHÚC</h1>
-		<h3 style="text-align:center; color:green;">TRUONG HONG PHUC</h3>
+		<h3 style="text-align:center; color:green;">PHUC TRUONG</h3>
 		<h3 style="text-align:center; color:green;"></h3>
 		
 	</div>

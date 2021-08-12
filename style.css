@@ -74,7 +74,7 @@
 		}
 		#content{
 		     width: 715px;
-		     min-height: 600px;
+		     min-height: 500px;
 		     border: 1px solid #CDCDCD;
 		     float:left;
 		     
@@ -145,7 +145,7 @@
 		}
 		#introduce-right{
 		     width: 270px;
-		     min-height: 645px;       
+		     min-height: 500px;       
 		     border: 1px solid #CDCDCD;
 		     float:right;
 		     margin-bottom: 5px;
